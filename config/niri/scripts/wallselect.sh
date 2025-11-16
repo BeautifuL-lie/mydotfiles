@@ -1,19 +1,13 @@
 #!/usr/bin/env bash
-# WallSelect for Niri + swww
-# Based on gh0stzk's WallSelect (Hyprland version)
-# Modified for Niri compositor by Ridwan & ChatGPT 🌀
 
 wall_dir="$HOME/Pictures/Wallpapers"
 cacheDir="$HOME/.cache/wallcache"
 
 [ -d "$cacheDir" ] || mkdir -p "$cacheDir"
 
-# Get all monitors from swww (assuming swww-daemon is running)
 monitors=$(swww query | grep "Output" | awk '{print $2}')
 
-# Estimate width for icon size (no hyprctl available)
-# Default icon size ~100px for fullHD
-icon_size=100
+icon_size=200
 rofi_override="element-icon{size:${icon_size}px;}"
 rofi_command="rofi -i -show -dmenu -theme $HOME/.config/rofi/applets/wallSelect.rasi -theme-str $rofi_override"
 
