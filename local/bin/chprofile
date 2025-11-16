@@ -1,19 +1,24 @@
 #!/bin/bash
-# Toggle profil Asus dengan asusctl
 
-# Jalankan perintah untuk berpindah ke profil berikutnya
+current=$(powerprofilesctl get)
+
 asusctl profile -n > /dev/null 2>&1
 
-# Ambil profil aktif setelah pergantian
-output=$(asusctl profile -p 2>/dev/null)
+case "$current" in
+    performance)
+        next="balanced"
+        ;;
+    balanced)
+        next="power-saver"
+        ;;
+    power-saver)
+        next="performance"
+        ;;
+    *)
+        next="balanced"
+        ;;
+esac
 
-# Ambil hanya nama profil dari output
-profile=$(echo "$output" | grep "Active profile" | awk '{print $4}')
-
-# Jika profil berhasil ditemukan, tampilkan notifikasi
-if [[ -n "$profile" ]]; then
-    swayosd-client --custom-message "$profile"
-else
-    echo "Gagal mendapatkan profil aktif."
-fi
-
+powerprofilesctl set "$next"
+profile="${next^}"
+swayosd-client --custom-message "$profile"
