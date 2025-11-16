@@ -3,7 +3,7 @@
 # Simpan file status
 STATE_FILE="/tmp/rofi_state"
 
-# Cek apakah ada wofi jalan
+# Cek apakah ada rofi jalan
 if pgrep -x "rofi" > /dev/null; then
     CURRENT=$(cat "$STATE_FILE" 2>/dev/null)
     if [ "$CURRENT" == "$1" ]; then
@@ -24,9 +24,6 @@ if [ "$1" == "app" ]; then
     rofi -show drun -show-icons
 elif [ "$1" == "wallpaper" ]; then
     echo "wallpaper" > "$STATE_FILE"
-    ~/.local/bin/wallpaper_switcher.sh
-elif [ "$1" == "overview" ]; then
-    echo "overview" > "$STATE_FILE"
-    qs ipc -c overview call overview toggle
+    ~/.config/niri/scripts/wallselect.sh
 fi
 
