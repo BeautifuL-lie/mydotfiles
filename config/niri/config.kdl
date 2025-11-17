@@ -95,7 +95,7 @@ layout {
 spawn-at-startup "nm-applet --indicator"
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "xwayland-sattelite"
+spawn-at-startup "xwayland-satellite"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "swayosd-server"
 
