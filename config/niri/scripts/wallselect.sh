@@ -78,10 +78,4 @@ SCHEMEFILE="$HOME/.cache/scheme"
 read -r scheme < "$SCHEMEFILE"
 
 # Apply wallpaper with swww
-if [[ -n "$wall_selection" ]]; then
-    for mon in $monitors; do
-        swww img "${wall_dir}/${wall_selection}" --outputs "$mon" --transition-type grow --transition-fps 60
-    done
-    matugen image "${wall_dir}/${wall_selection}" -m "$scheme"
-fi
-
+matugen image "${wall_dir}/${wall_selection}" -m "$scheme"
