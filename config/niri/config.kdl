@@ -380,3 +380,8 @@ layer-rule {
     match namespace="swww-daemon"
     place-within-backdrop true
 }
+
+cursor {
+    xcursor-theme "Simp1e-Rose-Pine-Moon"
+    xcursor-size 24
+}
