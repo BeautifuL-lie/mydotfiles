@@ -17,7 +17,10 @@
     "current-only": true
   },
   "niri/window": {
-    "format": "~ {app_id}"
+    "format": "~ {app_id}",
+    "rewrite": {
+      "~ com.github.th_ch.youtube_music": "~ youtube music"
+    }
   },
 
   /* === Modules Center === */
