@@ -20,7 +20,7 @@ window#waybar.hidden {
 
 /* - General rules for visible modules -- */
 #left1,
-#right1 {
+#right {
   color: @on_background;
   margin-top: 6px;
   margin-bottom: 6px;
@@ -60,9 +60,16 @@ window#waybar.hidden {
   text-shadow: inherit;
 }
 
+#window {
+  font-family: "SF Pro";
+  font-weight: bold;
+  margin-left: 10px;
+  color: @on_background;
+}
+
 /* Modules right */
 
-#right1 {
+#right {
   margin-right: 7px;
 }
 

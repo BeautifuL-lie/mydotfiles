@@ -7,22 +7,20 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   /* === Modules Order === */
-  "modules-left": ["niri/workspaces"],
+  "modules-left": ["niri/workspaces", "niri/window"],
   "modules-center": ["clock"],
-  "modules-right": ["group/right1"],
+  "modules-right": ["group/right"],
   /* === Modules Left === */
-  "group/left1": {
-    "orientation": "horizontal",
-    "modules": ["clock"]
+  "niri/workspaces": {
+    "format": "Workspace {index}",
+    "disable-click": true,
+    "current-only": true
   },
-  "custom/pacman": {
-    "format": "󰮯 {}",
-    "interval": 5,
-    "return-type": "json",
-    "exec": "~/.local/bin/pacman-updates.sh",
-    "on-click": "kitty -e sudo pacman -Syu",
-    "signal": 8
+  "niri/window": {
+    "format": "~ {app_id}"
   },
+
+  /* === Modules Center === */
   "clock": {
     "format": "{:%I:%M %p}",
     "tooltip-format": "{calendar}",
@@ -30,30 +28,8 @@
       "mode": "month"
     }
   },
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": true,
-    "tooltip-format": "CPU Usage: {usage}%\nNúcleos: {cores}"
-  },
-  "memory": {
-    "format": "{}% 󰍛",
-    "tooltip": true,
-    "tooltip-format": "RAM Usage: {used} / {total} ({percentage}%)"
-  },
-  "disk": {
-    "format": "{percentage_free}% ",
-    "tooltip": true,
-    "tooltip-format": "Free Space: {free} / {total} ({percentage_free}%)"
-  },
-  /* === Modules Center === */
-  "niri/workspaces": {
-    "format": "Workspace {index}",
-    "disable-click": true,
-    "current-only": true
-  },
-
   /* === Modules Right === */
-  "group/right1": {
+  "group/right": {
     "orientation": "horizontal",
     "modules": [
       "tray",
@@ -62,21 +38,6 @@
       "battery",
       "custom/notification"
     ]
-  },
-
-  "mpris": {
-    "format": "{player_icon} {artist} - {title}",
-    "format-paused": "{status_icon} {artist} - {title}",
-    "max-length": 30,
-    "interval": 2,
-    "player-icons": {
-      "default": "⏸",
-      "mpv": "🎵"
-    },
-    "status-icons": {
-      "paused": "▶"
-    }
-    // "ignored-players": ["firefox"]
   },
 
   "tray": {
@@ -149,18 +110,6 @@
   "backlight#percent": {
     "min-length": 4,
     "max-length": 4
-  },
-  "network": {
-    "format": "{ifname}",
-    "format-wifi": " ",
-    "format-ethernet": "{ifname} 󰈀",
-    "format-disconnected": " ",
-    "tooltip-format": " {ifname} via {gwaddr}",
-    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
-    "tooltip-format-wifi": "Connected to {essid}\n{ifname} {ipaddr}/{cidr}",
-    "tooltip-format-disconnected": "Disconnected",
-    "on-click": "hyprctl dispatch exec 'kitty --class popup-nmtui nmtui'",
-    "max-length": 50
   },
   "battery": {
     "interval": 30,
