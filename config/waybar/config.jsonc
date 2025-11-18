@@ -7,17 +7,13 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   /* === Modules Order === */
-  "modules-left": ["custom/ws", "niri/workspaces"],
+  "modules-left": ["niri/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["group/right1"],
   /* === Modules Left === */
   "group/left1": {
     "orientation": "horizontal",
     "modules": ["clock"]
-  },
-  "custom/ws": {
-    "format": "Workspace",
-    "tooltip": false
   },
   "custom/pacman": {
     "format": "󰮯 {}",
@@ -51,7 +47,8 @@
   },
   /* === Modules Center === */
   "niri/workspaces": {
-    "format": "{index}",
+    "format": "Workspace {index}",
+    "disable-click": true,
     "current-only": true
   },
 
