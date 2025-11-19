@@ -4,7 +4,7 @@ version_check = false
 [config.wallpaper]
 set = true
 command = "swww"
-arguments = ["img", "--transition-type", "any", "--transition-step", "255", "--transition-fps", "60"]
+arguments = ["img", "--transition-type", "any", "--transition-step", "255", "--transition-fps", "60", "--transition-duration", "1.8"]
 
 [templates.wallpaper]
 input_path = '~/.config/matugen/templates/wallpaper.conf'
