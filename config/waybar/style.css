@@ -83,22 +83,21 @@ window#waybar.hidden {
 }
 
 #audio {
-  padding-left: 2px;
-  padding-right: 15px;
+  margin-right: 13px;
 }
 
 #brightness {
-  padding-right: 17px;
+  margin-right: 15px;
 }
 
 #pulseaudio,
 #backlight {
-  padding-right: 2px;
+  padding-right: 4px;
 }
 
 #pulseaudio.volume,
 #backlight.percent {
-  padding-left: 10px;
+  margin-left: 3px;
 }
 
 #pulseaudio-slider,
@@ -162,7 +161,7 @@ window#waybar.hidden {
 }
 
 #custom-notification {
-  padding-right: 8px;
+  margin-right: 5px;
 }
 
 tooltip {
