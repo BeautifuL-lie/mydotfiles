@@ -98,6 +98,7 @@ spawn-at-startup "swww-daemon"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "swayosd-server"
+spawn-at-startup "powerprofilesctl set balanced"
 
 hotkey-overlay {
      skip-at-startup
