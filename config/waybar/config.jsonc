@@ -85,8 +85,9 @@
     "scroll-step": 1
   },
   "pulseaudio#volume": {
-    "min-length": 4,
-    "max-length": 4
+    "min-length": 3,
+    "max-length": 3,
+    "format": "{volume}"
   },
   "group/brightness": {
     "orientation": "horizontal",
@@ -102,7 +103,7 @@
     "format": "{icon}",
     "format-icons": [""],
     "reverse-scrolling": true,
-    "tooltip-format": "Brightness: {percent}%"
+    "tooltip-format": "Brightness: {percent}"
   },
   "backlight/slider": {
     "min": 1,
@@ -111,8 +112,9 @@
     "scroll-step": 1
   },
   "backlight#percent": {
-    "min-length": 4,
-    "max-length": 4
+    "min-length": 3,
+    "max-length": 3,
+    "format": "{percent}"
   },
   "battery": {
     "interval": 30,
