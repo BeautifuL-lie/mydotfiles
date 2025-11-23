@@ -12,7 +12,7 @@
   "modules-right": ["group/right"],
   /* === Modules Left === */
   "niri/workspaces": {
-    "format": "Workspace {index}",
+    "format": "Workspace {value}",
     "disable-click": true,
     "current-only": true
   },
