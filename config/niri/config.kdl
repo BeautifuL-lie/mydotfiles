@@ -54,7 +54,7 @@ output "eDP-1" {
 }
 
 layout {
-    gaps 3
+    gaps 2
     background-color "transparent"
     center-focused-column "never"
     preset-column-widths {
