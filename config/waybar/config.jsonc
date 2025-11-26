@@ -125,8 +125,7 @@
     },
     "tooltip-format": "Battery at {capacity}%\n{timeTo}",
     "format": "{icon}",
-    "format-charging": "{icon}<span foreground='yellow'><sup>󱐋</sup></span>",
-    "format-plugged": "󰂄",
+    "format-charging": "{icon} 󱐥",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
   "custom/notification": {
