@@ -598,6 +598,8 @@
 /************** Buttons Grid Widget **************/
 .widget-buttons-grid flowboxchild > button {
   border-radius: var(--border-radius);
+  background: @surface_container_high;
+  color: @on_background;
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:checked {
