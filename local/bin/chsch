@@ -6,10 +6,10 @@ wallpath=$(cut -d'=' -f2 "$file" | xargs)
 
 if [ $scheme = "dark" ]; then
   echo "dark" > ~/.cache/scheme
-  matugen image "$wallpath" -m dark && gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Dark'"  && sleep 0.5 && swayosd-client --custom-message "Dark Mode"
+  matugen image "$wallpath" -m dark && gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Dark'" && swaync-client -cp && swaync-client -op
 elif [ $scheme = "light" ]; then
   echo "light" > ~/.cache/scheme
-  matugen image "$wallpath" -m light && gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Light'"  && sleep 0.5 && swayosd-client --custom-message "Light Mode"
+  matugen image "$wallpath" -m light && gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Light'" && swaync-client -cp && swaync-client -op
 else
   echo "Invalid argument"
 fi
