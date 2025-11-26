@@ -30,6 +30,10 @@ window#waybar.hidden {
 
 /* Modules left */
 
+#custom-logo {
+  margin-left: 10px;
+}
+
 #clock {
   color: @on_background;
   font-family: "SF Pro";

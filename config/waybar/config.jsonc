@@ -7,10 +7,17 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   /* === Modules Order === */
-  "modules-left": ["niri/workspaces", "niri/window"],
+  "modules-left": ["custom/logo", "niri/workspaces", "niri/window"],
   "modules-center": ["clock"],
   "modules-right": ["group/right"],
   /* === Modules Left === */
+
+  "custom/logo": {
+    "format": "󰣇",
+    "tooltip": false,
+    "on-click": "wlogout"
+  },
+
   "niri/workspaces": {
     "format": "Workspace {value}",
     "disable-click": true,

@@ -6,3 +6,4 @@ config/swayosd/colors/matugen.css
 config/kitty/current-theme.conf
 config/waybar/colors.css
 config/rofi/colors/matugen.rasi
+config/wlogout/blurred_wp.jpg

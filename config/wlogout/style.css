@@ -1,7 +1,4 @@
 /* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/* pywal-wlogout */
-
-/* Importing pywal colors */
 
 @import '../../.config/waybar/colors.css';
 
@@ -10,8 +7,10 @@ window {
     font-size: 16pt;
     font-weight: bold;
     color:  @primary; /* text */
-    background-color: rgba(24, 27, 32, 0.2);
-
+    background-image: url("blurred_wp.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 } 
 
 button {

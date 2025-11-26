@@ -79,3 +79,4 @@ read -r scheme < "$SCHEMEFILE"
 
 # Apply wallpaper with swww
 matugen image "${wall_dir}/${wall_selection}" -m "$scheme"
+blurimg "${wall_dir}/${wall_selection}"

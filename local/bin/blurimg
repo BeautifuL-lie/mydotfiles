@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SRC="$1"
+OUT="$HOME/.config/wlogout/blurred_wp.jpg"
+BLUR=15
+magick "$SRC" -blur 0x$BLUR "$OUT"
