@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+swaync-client -cp 2>/dev/null
+
 wall_dir="$HOME/Pictures/Wallpapers"
 cacheDir="$HOME/.cache/wallcache"
 
