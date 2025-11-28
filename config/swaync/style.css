@@ -487,6 +487,8 @@
 .widget-title > button {
   margin-left: 8px;
   border-radius: var(--border-radius);
+  background: @surface_container_highest;
+  color: @on_surface;
 }
 
 .widget-title > button:hover {
@@ -504,6 +506,7 @@
 .widget-dnd switch {
   border-radius: var(--border-radius);
   margin-left: 8px;
+  background: @surface_container_highest;
 }
 
 .widget-dnd switch:checked {
