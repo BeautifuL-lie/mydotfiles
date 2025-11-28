@@ -174,7 +174,7 @@ binds {
     Super+Space { spawn-sh "~/.local/bin/rofi.sh app"; }
     Super+Alt+R { spawn-sh "waybar-reload.sh"; }
     Super+M { spawn-sh "chprofile"; }
-    Alt+F4 { spawn "wlogout"; }
+    Alt+F4 { spawn-sh "pkill wlogout || wlogout"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
     XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
