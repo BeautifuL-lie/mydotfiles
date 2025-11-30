@@ -1,0 +1,35 @@
+window-rule {
+    geometry-corner-radius 4
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="discord$"
+    match app-id="com.github.th_ch.youtube_music"
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+    open-focused false
+    default-floating-position x=32 y=32 relative-to="bottom-right"
+    default-column-width { proportion 0.3; }
+    default-window-height { proportion 0.3; }
+}
+
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}
+
+layer-rule {
+    match namespace="swww-daemon"
+    place-within-backdrop true
+}

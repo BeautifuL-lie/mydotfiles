@@ -1,0 +1,5 @@
+environment {
+	ELECTRON_OZONE_PLATFORM_HINT "auto"
+	QT_QPA_PLATFORM "wayland"
+	XDG_MENU_PREFIX "arch-"
+}
