@@ -2,7 +2,7 @@
 
 window#osd {
   border-radius: 10px;
-  border: 2px solid @outline;
+  border: 2px solid @primary;
   background: alpha(@surface_container_low, 0.8);
 }
 
