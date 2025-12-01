@@ -29,6 +29,14 @@ window-rule {
     block-out-from "screen-capture"
 }
 
+window-rule {
+    match title="Choose Directory"
+    open-floating true
+    default-floating-position x=0 y=0 relative-to="top"
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.4; }
+}
+
 layer-rule {
     match namespace="swww-daemon"
     place-within-backdrop true
