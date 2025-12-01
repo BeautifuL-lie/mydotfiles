@@ -137,6 +137,12 @@
           "active": true,
           "command": "sh -c '~/.config/swaync/scripts/toggle_hypridle.sh'",
           "update-command": "sh -c 'set +e;pgrep -x hypridle >/dev/null && echo true || echo false'"
+        },
+        {
+          "label": "",
+          "type": "normal",
+          "active": true,
+          "command": "chclr && swaync-client -cp"
         }
       ]
     },
