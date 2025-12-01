@@ -31,8 +31,9 @@ window-rule {
 
 window-rule {
     match title="Choose Directory"
+    match title="All Files"
     open-floating true
-    default-floating-position x=0 y=0 relative-to="top"
+    default-floating-position x=0 y=120 relative-to="top"
     default-window-height { proportion 0.5; }
     default-column-width { proportion 0.4; }
 }
