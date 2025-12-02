@@ -9,7 +9,7 @@ cacheDir="$HOME/.cache/wallcache"
 
 monitors=$(swww query | grep "Output" | awk '{print $2}')
 
-icon_size=200
+icon_size=180
 rofi_override="element-icon{size:${icon_size}px;}"
 rofi_command="rofi -i -show -dmenu -theme $HOME/.config/rofi/applets/wallSelect.rasi -theme-str $rofi_override"
 
