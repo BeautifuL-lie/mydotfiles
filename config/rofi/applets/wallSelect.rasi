@@ -13,12 +13,18 @@ configuration {
     hover-select:           	  true;
     me-select-entry:        	  "MouseSecondary";
     me-accept-entry:        	  "MousePrimary";
+    kb-move-char-back:        "";
+    kb-move-char-forward:     "";
+    kb-row-left:        "Left";
+    kb-row-right:       "Right";
+    kb-row-up:          "Up";
+    kb-row-down:        "Down";
     
 }
 
 /* ---- Global properties ---- */ 
 @import 		    	  "~/.config/rofi/applets/shared/colors.rasi"
-@import 	            	  "~/.config/rofi/applets/shared/fonts.rasi"
+@import 	              "~/.config/rofi/applets/shared/fonts.rasi"
 
 /* ---- Window ---- */
 window {
@@ -38,8 +44,8 @@ window {
 /* ---- Mainbox ---- */
 mainbox {
     enabled:                     true;
-    children:                    [ "listview" ];
-    background-color:            @background-alpha;
+    children:                    [ "inputbar", "listview" ];
+    background-color:            @background;
 }
 
 
@@ -90,6 +96,7 @@ element-icon {
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
+    padding: 10px 0px 0px 0px;
 }
 
 element-text {
@@ -127,4 +134,35 @@ error-message {
     border-radius:               20px;
     background-color:            @background;
     text-color:                  @foreground;
+}
+
+inputbar {
+    enabled: true;
+    background-color: transparent;
+    border-radius: 16px;
+    padding: 10px 40px;
+    spacing: 10px;
+}
+
+prompt {
+    enabled: false;
+}
+
+textbox-prompt-colon {
+    enabled: false;
+}
+
+entry {
+    placeholder: "Type to search...";
+    placeholder-color: @foreground;
+    text-color: @foreground;
+    background-color: @background-alt;
+    padding: 6px 10px;
+    border: 0px;
+    border-radius: 999px;
+    width: 100px;
+}
+
+case-indicator {
+    enabled: false;
 }

@@ -14,7 +14,7 @@
 
 * {
        background:       @surface;
-       background-alt:   @surface-container-highest;
+       background-alt:   @surface-container-low;
        background-alpha: @surface-alpha;
        foreground:       @on-surface;
        border-color:     @tertiary;
