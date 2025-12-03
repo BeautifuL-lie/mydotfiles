@@ -152,7 +152,7 @@ textbox-prompt-colon {
 }
 
 entry {
-    placeholder: "Type to search...";
+    placeholder: " Type to search...";
     placeholder-color: @foreground;
     text-color: @foreground;
     background-color: @background-alt;
