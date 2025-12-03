@@ -96,7 +96,6 @@ element-icon {
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
-    padding: 10px 0px 0px 0px;
 }
 
 element-text {
