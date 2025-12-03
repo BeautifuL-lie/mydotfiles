@@ -5,8 +5,20 @@ wall_dir="$HOME/Pictures/Wallpapers"
 cacheDir="$HOME/.cache/wallcache"
 [ -d "$cacheDir" ] || mkdir -p "$cacheDir"
 
-monitors=$(swww query | grep "Output" | awk '{print $2}')
-icon_size=220
+# Get focused/active monitor name
+focused_monitor=$(wlr-randr --json | jq -r \
+    '.[] | select(.modes[]?.current == true) | .name')
+
+# Get monitor width
+monitor_width=$(wlr-randr --json | jq -r --arg mon "$focused_monitor" \
+    '.[] | select(.name == $mon) | .modes[] | select(.current == true) | .width')
+
+# Get scale factor
+scale_factor=$(wlr-randr --json | jq -r --arg mon "$focused_monitor" \
+    '.[] | select(.name == $mon) | .scale')
+
+# Calculate icon size
+icon_size=$(echo "scale=2; ($monitor_width * 14) / ($scale_factor * 96)" | bc)
 rofi_override="element-icon{size:${icon_size}px;}"
 rofi_command="rofi -i -show -dmenu -theme $HOME/.config/rofi/applets/wallSelect.rasi -theme-str $rofi_override"
 
