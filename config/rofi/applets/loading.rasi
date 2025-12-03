@@ -1,0 +1,42 @@
+@import 		    	  "~/.config/rofi/applets/shared/colors.rasi"
+@import 	              "~/.config/rofi/applets/shared/fonts.rasi"
+
+* {
+    background-color: transparent;
+    text-color: #ffffff;
+    font: "JetBrains Mono Nerd Font 14";
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 400px;
+    border-radius: 16px;
+    background-color: @background;
+    border: 2px solid;
+    border-color: @selected;
+}
+
+mainbox {
+    enabled: true;
+    spacing: 0px;
+    padding: 40px;
+    background-color: transparent; 
+    children: [ "message" ];
+}
+
+message {
+    enabled: true;
+    background-color: transparent;
+    text-color: inherit;
+}
+
+textbox {
+    enabled: true;
+    background-color: transparent;
+    text-color: @foreground;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    padding: 20px;
+}
