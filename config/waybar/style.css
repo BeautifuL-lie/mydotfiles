@@ -73,7 +73,7 @@ window#waybar.hidden {
 
 #tray {
   color: rgb(235, 235, 235);
-  padding-right: 12px;
+  padding-right: 13px;
 }
 
 #tray menu {
@@ -81,7 +81,7 @@ window#waybar.hidden {
 }
 
 #audio {
-  margin-right: 13px;
+  margin-right: 11px;
 }
 
 #brightness {
