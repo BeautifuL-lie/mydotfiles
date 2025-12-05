@@ -3,13 +3,37 @@
 scheme=$1
 file="$HOME/.cache/wallpaper"
 wallpath=$(cut -d'=' -f2 "$file" | xargs)
+custom_color_path="$HOME/.customclr"
+custom_color=$(cat $custom_color_path)
 
 if [ $scheme = "dark" ]; then
-  echo "dark" > ~/.cache/scheme
-  matugen image "$wallpath" -m dark && gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Dark'" && swaync-client -cp && swaync-client -op
+	if [ -f $custom_color_path ]; then
+		if [ $custom_color != "monochrome" ]; then
+			matugen color hex "$custom_color" -m dark
+		else
+			matugen color hex "#000000" -m dark -t scheme-monochrome
+		fi
+	else
+		matugen image "$wallpath" -m dark 
+	fi
+	echo "dark" > ~/.cache/scheme
+	gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Dark'"
+	swaync-client -cp
+	swaync-client -op
 elif [ $scheme = "light" ]; then
-  echo "light" > ~/.cache/scheme
-  matugen image "$wallpath" -m light && gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Light'" && swaync-client -cp && swaync-client -op
+	if [ -f $custom_color_path ]; then
+		if [ $custom_color != "monochrome" ]; then
+			matugen color hex "$custom_color" -m light
+		else
+			matugen color hex "#000000" -m light -t scheme-monochrome
+		fi
+	else
+		matugen image "$wallpath" -m light 
+	fi
+  	echo "light" > ~/.cache/scheme
+	gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Light'"
+	swaync-client -cp 
+	swaync-client -op 
 else
-  echo "Invalid argument"
+  	echo "Invalid argument"
 fi

@@ -110,5 +110,6 @@ SCHEMEFILE="$HOME/.cache/scheme"
 [[ ! -f "$SCHEMEFILE" ]] && echo "dark" > "$SCHEMEFILE"
 read -r scheme < "$SCHEMEFILE"
 
+rm -f ~/.customclr 2>/dev/null
 # Apply wallpaper with swww
 matugen image "${wall_dir}/${wall_selection}" -m "$scheme"

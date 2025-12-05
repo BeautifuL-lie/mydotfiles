@@ -15,6 +15,7 @@ if [ $# -eq 0 ]; then
 
   matugen color hex "$color" -m "$scheme"
   echo "$wallpaper" > "$HOME/.cache/wallpaper"
+  echo "$color" > "$HOME/.customclr"
   exit 0
 fi
 
@@ -23,6 +24,7 @@ if [ "$1" = "monochrome" ]; then
   echo "monochrome" > "$HOME/.cache/color"
   matugen color hex "#000000" -m "$scheme" -t scheme-monochrome
   echo "$wallpaper" > "$HOME/.cache/wallpaper"
+  echo "monochrome" > "$HOME/.customclr"
 else
   echo "Invalid argument"
 fi
