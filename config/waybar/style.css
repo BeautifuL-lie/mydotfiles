@@ -72,12 +72,15 @@ window#waybar.hidden {
 }
 
 #tray {
-  color: rgb(235, 235, 235);
   padding-right: 13px;
 }
 
 #tray menu {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: @background;
+}
+
+#tray menu menuitem {
+  color: @on_background;
 }
 
 #audio {
