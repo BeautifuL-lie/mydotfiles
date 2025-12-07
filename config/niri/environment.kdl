@@ -1,5 +1,7 @@
 environment {
 	ELECTRON_OZONE_PLATFORM_HINT "auto"
 	QT_QPA_PLATFORM "wayland"
+	QT_QPA_PLATFORMTHEME "kvantum"
+	QT_STYLE_OVERRIDE "kvantum"
 	XDG_MENU_PREFIX "arch-"
 }
