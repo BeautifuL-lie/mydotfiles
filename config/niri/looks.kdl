@@ -60,3 +60,9 @@ gestures {
 		off
 	}
 }
+
+overview {
+	workspace-shadow {
+		off
+	}
+}
