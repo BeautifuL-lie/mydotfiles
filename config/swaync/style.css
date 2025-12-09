@@ -605,6 +605,11 @@
   color: @on_background;
 }
 
+.widget-buttons-grid flowboxchild > button:hover {
+  background: @primary_container;
+  color: @on_primary_container;
+}
+
 .widget-buttons-grid flowboxchild > button.toggle:checked {
   /* style given to the active toggle button */
   background: linear-gradient(
@@ -620,14 +625,12 @@
   /* style given to the toggle button hover */
   background: @primary_container;
   color: @on_primary_container;
-  transition: opacity 0.15s ease-in-out;
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:hover:checked {
   /* style given to the active toggle button hover */
   background: @tertiary;
   color: @on_tertiary;
-  transition: opacity 0.15s ease-in-out;
 }
 
 /************** Menubar Widget **************/
@@ -785,4 +788,35 @@
 .widget-inhibitors > button {
   margin-left: 8px;
   border-radius: var(--border-radius);
+}
+
+.notification-action button {
+  background: red;
+}
+
+button.toggle {
+  border: none;
+  border-width: 0;
+  outline: none;
+  box-shadow: none;
+  color: @on_surface;
+  background: @surface_container_high;
+}
+
+button.toggle:hover {
+  background: @surface_container_highest;
+}
+
+button.toggle:checked {
+  color: @on_primary;
+  background: @primary;
+}
+
+.close-button:hover {
+  background: #fca5a5;
+  color: #333333;
+}
+
+.close-button {
+  background: @surface_container_high;
 }
