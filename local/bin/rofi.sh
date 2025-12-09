@@ -3,6 +3,10 @@
 # Simpan file status
 STATE_FILE="/tmp/rofi_state"
 
+if pgrep -x "wlogout" > /dev/null; then
+    exit 0
+fi
+
 # Cek apakah ada rofi jalan
 if pgrep -x "rofi" > /dev/null; then
     CURRENT=$(cat "$STATE_FILE" 2>/dev/null)
