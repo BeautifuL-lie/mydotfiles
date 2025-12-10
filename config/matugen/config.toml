@@ -33,3 +33,8 @@ post_hook = 'swaync-client -rs'
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/swayosd/colors/matugen.css'
 post_hook = 'pkill swayosd-server;setsid -f swayosd-server >/dev/null 2>&1'
+
+[templates.niri]
+input_path = '~/.config/matugen/templates/colors.kdl'
+output_path = '~/.config/niri/colors.kdl'
+post_hook = 'niri msg action load-config-file'
