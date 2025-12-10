@@ -5,26 +5,53 @@ file="$HOME/.cache/wallpaper"
 wallpath=$(cut -d'=' -f2 "$file" | xargs)
 wallpaper="$wallpath"
 
-# No args: open color GUI
-if [ $# -eq 0 ]; then
-  color=$(kcolorchooser --print)
+CACHE_COLOR="$HOME/.cache/color"
+CUSTOMCLR="$HOME/.customclr"
 
+# Fungsi cek HEX
+is_hex() {
+    [[ "$1" =~ ^#[A-Fa-f0-9]{6}$ ]]
+}
+
+# --- Jika tidak ada argumen: buka rofi input ---
+if [ $# -eq 0 ]; then
+  swaync-client -cp
+  color=$(rofi -dmenu -p "HEX color / monochrome")
+
+  # Jika user cancel
   if [ -z "$color" ]; then
     exit 1
   fi
 
-  matugen color hex "$color" -m "$scheme"
-  echo "$wallpaper" > "$HOME/.cache/wallpaper"
-  echo "$color" > "$HOME/.customclr"
-  exit 0
+  # Jika monochrome
+  if [ "$color" = "monochrome" ]; then
+    echo "monochrome" > "$CACHE_COLOR"
+    matugen color hex "#000000" -m "$scheme" -t scheme-monochrome
+    echo "$wallpaper" > "$HOME/.cache/wallpaper"
+    echo "monochrome" > "$CUSTOMCLR"
+    exit 0
+  fi
+
+  # Jika HEX valid
+  if is_hex "$color"; then
+    echo "$color" > "$CACHE_COLOR"
+    matugen color hex "$color" -m "$scheme"
+    echo "$wallpaper" > "$HOME/.cache/wallpaper"
+    echo "$color" > "$CUSTOMCLR"
+    exit 0
+  fi
+
+  # Invalid input
+  notify-send "Input tidak valid" "Gunakan format #RRGGBB atau 'monochrome'"
+  exit 1
 fi
 
-# monochrome mode
+# --- Mode monochrome via argumen ---
 if [ "$1" = "monochrome" ]; then
-  echo "monochrome" > "$HOME/.cache/color"
+  echo "monochrome" > "$CACHE_COLOR"
   matugen color hex "#000000" -m "$scheme" -t scheme-monochrome
   echo "$wallpaper" > "$HOME/.cache/wallpaper"
-  echo "monochrome" > "$HOME/.customclr"
+  echo "monochrome" > "$CUSTOMCLR"
 else
-  echo "Invalid argument"
+  echo "Argumen invalid"
 fi
