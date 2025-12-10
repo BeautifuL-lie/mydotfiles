@@ -5,20 +5,28 @@ wall_dir="$HOME/Pictures/Wallpapers"
 cacheDir="$HOME/.cache/wallcache"
 [ -d "$cacheDir" ] || mkdir -p "$cacheDir"
 
-# Get focused/active monitor name
-focused_monitor=$(wlr-randr --json | jq -r \
-    '.[] | select(.modes[]?.current == true) | .name')
+# Ambil blok output untuk monitor yang punya "(current)"
+focused_block=$(niri msg outputs | awk '
+    /Output / {block=""; inside=1}
+    inside {block = block $0 "\n"}
+    /\(current/ {print block; exit}
+')
 
-# Get monitor width
-monitor_width=$(wlr-randr --json | jq -r --arg mon "$focused_monitor" \
-    '.[] | select(.name == $mon) | .modes[] | select(.current == true) | .width')
+# Ambil nama output: yang ada dalam tanda kurung terakhir
+focused_monitor=$(echo "$focused_block" | sed -n 's/^Output "\(.*\)" (.*/\1/p')
 
-# Get scale factor
-scale_factor=$(wlr-randr --json | jq -r --arg mon "$focused_monitor" \
-    '.[] | select(.name == $mon) | .scale')
+# Ambil resolusi (Current mode: WxH)
+monitor_width=$(echo "$focused_block" \
+    | sed -n 's/^\s*Current mode:\s*\([0-9]*\)x.*/\1/p')
 
-# Calculate icon size
+# Ambil scale factor
+scale_factor=$(echo "$focused_block" \
+    | sed -n 's/^\s*Scale:\s*\([0-9.]*\).*/\1/p')
+
+# Hitung icon size
 icon_size=$(echo "scale=2; ($monitor_width * 14) / ($scale_factor * 96)" | bc)
+
+# Variabel override rofi
 rofi_override="element-icon{size:${icon_size}px;}"
 rofi_command="rofi -i -show -dmenu -theme $HOME/.config/rofi/applets/wallSelect.rasi -theme-str $rofi_override"
 
