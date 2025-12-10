@@ -4,7 +4,7 @@ cursor {
 }
 
 layout {
-    gaps 2
+    gaps 3.4
     background-color "transparent"
     center-focused-column "never"
     preset-column-widths {
@@ -14,7 +14,7 @@ layout {
 
     default-column-width { proportion 0.5; }
     focus-ring {
-        width 1.5
+        width 2
         active-color "#5f5f5fff"
         inactive-color "#505050"
     }
