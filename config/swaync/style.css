@@ -85,19 +85,16 @@
 .notification-row .notification-background .notification.low {
   /* Low Priority Notification */
   background: alpha(@surface_container_low, var(--noti-bg-alpha));
-  box-shadow: 0px 0px 4px alpha(@on_surface, 1);
 }
 
 .notification-row .notification-background .notification.normal {
   /* Normal Priority Notification */
   background: alpha(var(--noti-bg), var(--noti-bg-alpha));
-  box-shadow: 0px 0px 4px alpha(@on_surface, 1);
 }
 
 .notification-row .notification-background .notification.critical {
   /* Critical Priority Notification */
   background: alpha(@surface_container_high, var(--noti-bg-alpha));
-  box-shadow: 0px 0px 4px alpha(@on_surface, 1);
 }
 
 .notification-row
@@ -788,10 +785,6 @@
 .widget-inhibitors > button {
   margin-left: 8px;
   border-radius: var(--border-radius);
-}
-
-.notification-action button {
-  background: red;
 }
 
 button.toggle {
