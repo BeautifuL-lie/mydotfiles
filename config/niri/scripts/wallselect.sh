@@ -5,25 +5,10 @@ wall_dir="$HOME/Pictures/Wallpapers"
 cacheDir="$HOME/.cache/wallcache"
 [ -d "$cacheDir" ] || mkdir -p "$cacheDir"
 
-# Ambil blok output untuk monitor yang punya "(current)"
-focused_block=$(niri msg outputs | awk '
-    /Output / {block=""; inside=1}
-    inside {block = block $0 "\n"}
-    /\(current/ {print block; exit}
-')
+monitor_width=$(niri msg focused-output | awk 'NR==2 {print $3}' | cut -d 'x' -f1)
 
-# Ambil nama output: yang ada dalam tanda kurung terakhir
-focused_monitor=$(echo "$focused_block" | sed -n 's/^Output "\(.*\)" (.*/\1/p')
+scale_factor=$(niri msg focused-output | awk 'NR==7 {print $2}')
 
-# Ambil resolusi (Current mode: WxH)
-monitor_width=$(echo "$focused_block" \
-    | sed -n 's/^\s*Current mode:\s*\([0-9]*\)x.*/\1/p')
-
-# Ambil scale factor
-scale_factor=$(echo "$focused_block" \
-    | sed -n 's/^\s*Scale:\s*\([0-9.]*\).*/\1/p')
-
-# Hitung icon size
 icon_size=$(echo "scale=2; ($monitor_width * 14) / ($scale_factor * 96)" | bc)
 
 # Variabel override rofi
