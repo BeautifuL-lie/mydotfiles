@@ -31,8 +31,9 @@ window#waybar.hidden {
 /* Modules left */
 
 #custom-logo {
+  font-size: larger;
   color: @on_background;
-  margin-left: 10px;
+  margin-left: 12px;
 }
 
 #clock {
@@ -42,7 +43,7 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  margin-left: 12px;
+  margin-left: 15px;
 }
 
 #workspaces button {
@@ -61,7 +62,7 @@ window#waybar.hidden {
 #window {
   font-family: "SF Pro";
   font-weight: bold;
-  margin-left: 10px;
+  margin-left: 6px;
   color: @on_background;
 }
 
