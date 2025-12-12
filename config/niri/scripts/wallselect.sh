@@ -84,10 +84,6 @@ done
 
 rm -f "${cacheDir}"/.lock_* 2>/dev/null || true
 
-if pidof rofi > /dev/null; then
-    pkill rofi
-fi
-
 wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" \) -print0 |
     xargs -0 basename -a |
     LC_ALL=C sort -V |
@@ -98,6 +94,8 @@ wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg"
             printf '%s\x00icon\x1f%s/%s\n' "$A" "${cacheDir}" "$A"
         fi
     done | $rofi_command)
+
+if [ -z "$wall_selection" ]; then exit 0; fi
 
 MODE_FILE="$HOME/.mode"
 [[ ! -f "$MODE_FILE" ]] && echo "dark" > "$MODE_FILE"
