@@ -48,7 +48,6 @@ window#waybar.hidden {
 
 #workspaces button {
   font-family: "SF Pro";
-  font-weight: bold;
   padding: 0;
   margin: 0;
   color: @on_background;
@@ -61,7 +60,6 @@ window#waybar.hidden {
 
 #window {
   font-family: "SF Pro";
-  font-weight: bold;
   margin-left: 6px;
   color: @on_background;
 }
