@@ -6,10 +6,6 @@ set = true
 command = "swww"
 arguments = ["img", "--transition-type", "any", "--transition-step", "255", "--transition-fps", "60", "--transition-duration", "1.8"]
 
-[templates.wallpaper]
-input_path = '~/.config/matugen/templates/wallpaper.conf'
-output_path = '~/.cache/wallpaper'
-
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/matugen.conf'

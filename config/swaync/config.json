@@ -129,7 +129,7 @@
           "type": "toggle",
           "active": true,
           "command": "sh -c '~/.config/swaync/scripts/toggle_darkmode.sh'",
-          "update-command": "sh -c 'set +e;grep -q dark ~/.cache/scheme && echo true || echo false'"
+          "update-command": "sh -c 'set +e;grep -q dark ~/.mode && echo true || echo false'"
         },
         {
           "label": "",

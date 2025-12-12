@@ -99,10 +99,11 @@ wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg"
         fi
     done | $rofi_command)
 
-SCHEMEFILE="$HOME/.cache/scheme"
-[[ ! -f "$SCHEMEFILE" ]] && echo "dark" > "$SCHEMEFILE"
-read -r scheme < "$SCHEMEFILE"
+MODE_FILE="$HOME/.mode"
+[[ ! -f "$MODE_FILE" ]] && echo "dark" > "$MODE_FILE"
+read -r mode < "$MODE_FILE"
 
-rm -f ~/.customclr 2>/dev/null
+rm -f ~/.custom-color 2>/dev/null
 # Apply wallpaper with swww
-matugen image "${wall_dir}/${wall_selection}" -m "$scheme"
+matugen image "${wall_dir}/${wall_selection}" -m "$mode"
+echo "${wall_dir}/${wall_selection}" > ~/.wallpaper

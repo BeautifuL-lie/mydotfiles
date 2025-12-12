@@ -1,12 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-scheme=$(cat "$HOME/.cache/scheme")
-file="$HOME/.cache/wallpaper"
-wallpath=$(cut -d'=' -f2 "$file" | xargs)
-wallpaper="$wallpath"
-
-CACHE_COLOR="$HOME/.cache/color"
-CUSTOMCLR="$HOME/.customclr"
+mode=$(cat "$HOME/.mode")
+wallpaper=$(cat "$HOME/.wallpaper")
+customcolor="$HOME/.custom-color"
 
 # Fungsi cek HEX
 is_hex() {
@@ -25,19 +21,15 @@ if [ $# -eq 0 ]; then
 
   # Jika monochrome
   if [ "$color" = "monochrome" ]; then
-    echo "monochrome" > "$CACHE_COLOR"
-    matugen color hex "#000000" -m "$scheme" -t scheme-monochrome
-    echo "$wallpaper" > "$HOME/.cache/wallpaper"
-    echo "monochrome" > "$CUSTOMCLR"
+    matugen color hex "#000000" -m "$mode" -t scheme-monochrome
+    echo "monochrome" > "$customcolor"
     exit 0
   fi
 
   # Jika HEX valid
   if is_hex "$color"; then
-    echo "$color" > "$CACHE_COLOR"
-    matugen color hex "$color" -m "$scheme"
-    echo "$wallpaper" > "$HOME/.cache/wallpaper"
-    echo "$color" > "$CUSTOMCLR"
+    matugen color hex "$color" -m "$mode"
+    echo "$color" > "$customcolor"
     exit 0
   fi
 
@@ -48,10 +40,8 @@ fi
 
 # --- Mode monochrome via argumen ---
 if [ "$1" = "monochrome" ]; then
-  echo "monochrome" > "$CACHE_COLOR"
-  matugen color hex "#000000" -m "$scheme" -t scheme-monochrome
-  echo "$wallpaper" > "$HOME/.cache/wallpaper"
-  echo "monochrome" > "$CUSTOMCLR"
+  matugen color hex "#000000" -m "$mode" -t scheme-monochrome
+  echo "monochrome" > "$customcolor"
 else
   echo "Argumen invalid"
 fi

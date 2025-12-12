@@ -1,37 +1,35 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-scheme=$1
-file="$HOME/.cache/wallpaper"
-wallpath=$(cut -d'=' -f2 "$file" | xargs)
-custom_color_path="$HOME/.customclr"
-custom_color=$(cat $custom_color_path)
+mode=$1
+wallpaper=$(cat "$HOME/.wallpaper")
+custom_color=$(cat "$HOME/.custom-color")
 
-if [ $scheme = "dark" ]; then
-	if [ -f $custom_color_path ]; then
-		if [ $custom_color != "monochrome" ]; then
+if [ "$mode" = "dark" ]; then
+	if [ -f ~/.custom-color ]; then
+		if [ "$custom_color" != "monochrome" ]; then
 			matugen color hex "$custom_color" -m dark
 		else
 			matugen color hex "#000000" -m dark -t scheme-monochrome
 		fi
 	else
-		matugen image "$wallpath" -m dark 
+		matugen image "$wallpaper" -m dark 
 	fi
-	echo "dark" > ~/.cache/scheme
-	gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Dark'"
+	echo "dark" > ~/.mode
+	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 	swaync-client -cp
 	swaync-client -op
-elif [ $scheme = "light" ]; then
-	if [ -f $custom_color_path ]; then
-		if [ $custom_color != "monochrome" ]; then
+elif [ "$mode" = "light" ]; then
+	if [ -f ~/.custom-color ]; then
+		if [ "$custom_color" != "monochrome" ]; then
 			matugen color hex "$custom_color" -m light
 		else
 			matugen color hex "#000000" -m light -t scheme-monochrome
 		fi
 	else
-		matugen image "$wallpath" -m light 
+		matugen image "$wallpaper" -m light 
 	fi
-  	echo "light" > ~/.cache/scheme
-	gsettings set org.gnome.desktop.interface icon-theme "'Papirus-Light'"
+  	echo "light" > ~/.mode
+	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Light'
 	swaync-client -cp 
 	swaync-client -op 
 else
