@@ -1,5 +1,6 @@
 layout {
-    focus-ring {
-        active-color "{{colors.outline.default.hex}}"
+    border {
+        active-color "{{colors.primary_container.default.hex}}"
+        inactive-color "{{colors.surface_container.default.hex}}"
     }
 }

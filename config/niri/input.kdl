@@ -41,5 +41,5 @@ input {
     }
 
     warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="1%"
+    focus-follows-mouse max-scroll-amount="0%"
 }
