@@ -1,6 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    if test $TERM = "xterm-kitty"
+    if test $TERM != "xterm-256color"
          fastfetch
     end
 end
