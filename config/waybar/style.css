@@ -128,12 +128,14 @@ window#waybar.hidden {
   min-height: 10px;
   border-radius: 8px;
   background: linear-gradient(to right, @primary_container, @inverse_primary);
+  border: 1px solid @outline;
 }
 
 #backlight-slider highlight,
 #pulseaudio-slider highlight {
   border-radius: 8px;
   background: @primary;
+  border: 1px solid @outline;
 }
 
 #network {
