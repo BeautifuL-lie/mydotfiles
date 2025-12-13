@@ -34,6 +34,6 @@ if [ "$1" == "app" ]; then
     rofi -show drun -theme ~/.config/rofi/applets/app.rasi &
 elif [ "$1" == "wallpaper" ]; then
     echo "wallpaper" > "$STATE_FILE"
-    ~/.config/niri/scripts/wallselect.sh &
+    ~/.config/rofi/scripts/wallpaper-select.sh &
 fi
 

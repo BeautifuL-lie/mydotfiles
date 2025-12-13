@@ -6,10 +6,10 @@ binds {
     Mod+E hotkey-overlay-title="Open File Manager: Dolphin" { spawn "dolphin"; }
     Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
-    Mod+Shift+W hotkey-overlay-title="Change Wallpaper" { spawn-sh "~/.local/bin/rofi.sh wallpaper"; }
-    Mod+Space hotkey-overlay-title="Open Application Launcher" { spawn-sh "~/.local/bin/rofi.sh app"; }
-    Mod+Alt+R hotkey-overlay-title="Reload Waybar" { spawn-sh "waybar-reload.sh"; }
-    Mod+M hotkey-overlay-title="Switch Power Profile" { spawn-sh "chprofile"; }
+    Mod+Shift+W hotkey-overlay-title="Change Wallpaper" { spawn-sh "~/.config/rofi/scripts/rofi.sh wallpaper"; }
+    Mod+Space hotkey-overlay-title="Open Application Launcher" { spawn-sh "~/.config/rofi/scripts/rofi.sh app"; }
+    Mod+Alt+R hotkey-overlay-title="Reload Waybar" { spawn-sh "~/.config/waybar/scripts/waybar-reload.sh"; }
+    Mod+M hotkey-overlay-title="Switch Power Profile" { spawn-sh "change-power-profile"; }
     Alt+F4 hotkey-overlay-title="Open Wlogout" { spawn-sh "pkill rofi || true; swaync-client -cp; pkill wlogout || wlogout"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }

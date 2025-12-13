@@ -142,7 +142,7 @@
           "label": "",
           "type": "normal",
           "active": true,
-          "command": "chclr && swaync-client -cp"
+          "command": "change-color-scheme && swaync-client -cp"
         }
       ]
     },
