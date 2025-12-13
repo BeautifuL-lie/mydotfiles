@@ -22,6 +22,12 @@ if pgrep -x "rofi" > /dev/null; then
     fi
 fi
 
+if [ "$1" != "app" || "$1" != "wallpaper" ]; then
+    exit 1
+fi
+
+swaync-client -cp 2>/dev/null
+
 # Jalankan sesuai argumen
 if [ "$1" == "app" ]; then
     echo "app" > "$STATE_FILE"
