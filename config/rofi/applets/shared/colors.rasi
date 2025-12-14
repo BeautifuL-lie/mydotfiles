@@ -17,7 +17,7 @@
        background-alt:   @surface-container-low;
        background-alpha: @surface-alpha;
        foreground:       @on-surface;
-       border-color:     @tertiary;
+       border-color:     @outline;
        selected:         @primary;
        selected-text:    @surface;
        active:           @tertiary;

@@ -35,9 +35,9 @@ window {
     cursor:                      "default";
     spacing:                     0px;
     padding:                     0px;
-    border:                      0px;
-    border-radius:               15px 15px 0px 0px;
-    border-color:                transparent;
+    border:                      2px 2px 0px 2px;
+    border-radius:               25px 25px 0px 0px;
+    border-color:                @outline;
     background-color:            transparent;
     location: south;
     anchor: south;
@@ -141,7 +141,7 @@ inputbar {
     enabled: true;
     background-color: transparent;
     border-radius: 16px;
-    padding: 10px 40px;
+    padding: 3px 20px 10px 20px;
     spacing: 10px;
 }
 
@@ -154,12 +154,13 @@ textbox-prompt-colon {
 }
 
 entry {
-    placeholder: " Type to search...";
+    placeholder: " Search Wallpaper...";
     placeholder-color: @foreground;
     text-color: @foreground;
     background-color: @background-alt;
     padding: 6px 10px;
-    border: 0px;
+    border: 1px;
+    border-color: @border-color;
     border-radius: 12px;
     width: 100px;
 }
