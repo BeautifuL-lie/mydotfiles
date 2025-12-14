@@ -37,7 +37,7 @@ window {
     padding:                     0px;
     border:                      2px 2px 0px 2px;
     border-radius:               25px 25px 0px 0px;
-    border-color:                @outline;
+    border-color:                @border-color;
     background-color:            transparent;
     location: south;
     anchor: south;
