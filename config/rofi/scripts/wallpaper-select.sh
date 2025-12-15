@@ -103,4 +103,5 @@ read -r mode <"$MODE_FILE"
 rm -f ~/.custom-color 2>/dev/null
 # Apply wallpaper with swww
 matugen image "${wall_dir}/${wall_selection}" -m "$mode"
-echo "${wall_dir}/${wall_selection}" >~/.wallpaper
+#echo "${wall_dir}/${wall_selection}" >~/.wallpaper
+ln -sf "${wall_dir}/${wall_selection}" ~/.wallpaper

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 mode=$1
-wallpaper=$(cat "$HOME/.wallpaper")
+wallpaper="$HOME/.wallpaper"
 custom_color=$(cat "$HOME/.custom-color")
 
 if [ "$mode" = "dark" ]; then

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 mode=$(cat "$HOME/.mode")
-wallpaper=$(cat "$HOME/.wallpaper")
 customcolor="$HOME/.custom-color"
 
 # Fungsi cek HEX
