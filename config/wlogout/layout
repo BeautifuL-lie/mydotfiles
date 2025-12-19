@@ -17,12 +17,6 @@
     "keybind" : "e"
 }
 {
-    "label" : "hibernate",
-    "action" : "swaylock -f && systemctl hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
-}
-{
     "label" : "lock",
     "action" : "swaylock -f",
     "text" : "Lock",
