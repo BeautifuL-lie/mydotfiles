@@ -6,6 +6,7 @@ window-rule {
 window-rule {
     match app-id="discord$"
     match app-id="com.github.th_ch.youtube_music"
+    match app-id=r#"firefox$"#
     open-maximized true
 }
 
