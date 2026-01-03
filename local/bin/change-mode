@@ -16,8 +16,6 @@ if [ "$mode" = "dark" ]; then
 	fi
 	echo "dark" > ~/.mode
 	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-	swaync-client -cp
-	swaync-client -op
 elif [ "$mode" = "light" ]; then
 	if [ -f ~/.custom-color ]; then
 		if [ "$custom_color" != "monochrome" ]; then
@@ -30,8 +28,6 @@ elif [ "$mode" = "light" ]; then
 	fi
   	echo "light" > ~/.mode
 	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Light'
-	swaync-client -cp 
-	swaync-client -op 
 else
   	echo "Invalid argument"
 fi

@@ -11,11 +11,6 @@ input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/matugen.conf'
 post_hook = 'kitten themes --reload-in=all matugen'
 
-[templates.waybar]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/colors.css'
-post_hook = 'pkill -SIGUSR2 waybar'
-
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/colors/matugen.rasi'
@@ -34,3 +29,8 @@ post_hook = 'pkill swayosd-server;setsid -f swayosd-server >/dev/null 2>&1'
 input_path = '~/.config/matugen/templates/colors.kdl'
 output_path = '~/.config/niri/colors.kdl'
 post_hook = 'niri msg action load-config-file'
+
+[templates.quickshell]
+input_path = '~/.config/matugen/templates/quickshell.qml'
+output_path = '~/.config/quickshell/color/Matugen.qml'
+
