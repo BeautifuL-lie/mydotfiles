@@ -92,7 +92,7 @@ wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg"
     else
       printf '%s\x00icon\x1f%s/%s\n' "$A" "${cacheDir}" "$A"
     fi
-  done | $rofi_command)
+  done | sort | $rofi_command)
 
 if [ -z "$wall_selection" ]; then exit 0; fi
 
@@ -105,3 +105,4 @@ rm -f ~/.custom-color 2>/dev/null
 matugen image "${wall_dir}/${wall_selection}" -m "$mode"
 #echo "${wall_dir}/${wall_selection}" >~/.wallpaper
 ln -sf "${wall_dir}/${wall_selection}" ~/.wallpaper
+
