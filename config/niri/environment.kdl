@@ -4,4 +4,7 @@ environment {
 	QT_QPA_PLATFORMTHEME "kvantum"
 	QT_STYLE_OVERRIDE "kvantum"
 	XDG_MENU_PREFIX "arch-"
+
+  GDK_BACKEND "wayland,x11"
+  SDL_VIDEODRIVER "wayland"
 }
