@@ -10,7 +10,7 @@ scale_factor=$(niri msg focused-output | awk 'NR==7 {print $2}')
 
 icon_size=$(echo "scale=2; ($monitor_width * 14) / ($scale_factor * 96)" | bc)
 
-# Variabel override rofi
+# Rofi Override
 rofi_override="element-icon{size:${icon_size}px;}"
 rofi_command="rofi -i -show -dmenu -theme $HOME/.config/rofi/applets/wallpaper-select.rasi -theme-str $rofi_override"
 
@@ -44,10 +44,10 @@ export wall_dir cacheDir
 
 rm -f "${cacheDir}"/.lock_* 2>/dev/null || true
 
-# File untuk tracking proses
+# Tracking Process file
 CACHE_RUNNING="/tmp/wallpaper_cache_running_$"
 
-# Tampilkan loading popup jika proses lebih dari 2 detik
+# Show Loading if past 1 sec
 (
   sleep 1
   if [ -f "$CACHE_RUNNING" ]; then
@@ -57,13 +57,13 @@ CACHE_RUNNING="/tmp/wallpaper_cache_running_$"
 ) &
 LOADING_PID=$!
 
-# Mulai proses caching
+# Start Caching
 touch "$CACHE_RUNNING"
 
 find "$wall_dir" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" \) -print0 |
   xargs -0 -P "$PARALLEL_JOBS" -I {} bash -c 'process_image "{}"'
 
-# Selesai - tutup loading
+# Finish / Close Loading
 rm -f "$CACHE_RUNNING"
 kill "$LOADING_PID" 2>/dev/null
 kill $(cat "/tmp/wallpaper_loading_rofi_$" 2>/dev/null) 2>/dev/null
@@ -101,8 +101,6 @@ MODE_FILE="$HOME/.mode"
 read -r mode <"$MODE_FILE"
 
 rm -f ~/.custom-color 2>/dev/null
-# Apply wallpaper with swww
 matugen image "${wall_dir}/${wall_selection}" -m "$mode"
-#echo "${wall_dir}/${wall_selection}" >~/.wallpaper
 ln -sf "${wall_dir}/${wall_selection}" ~/.wallpaper
 
