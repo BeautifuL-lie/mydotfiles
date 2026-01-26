@@ -2,21 +2,19 @@
 
 current=$(powerprofilesctl get)
 
-asusctl profile -n > /dev/null 2>&1
-
 case "$current" in
-    performance)
-        next="balanced"
-        ;;
-    balanced)
-        next="power-saver"
-        ;;
-    power-saver)
-        next="performance"
-        ;;
-    *)
-        next="balanced"
-        ;;
+performance)
+  next="balanced"
+  ;;
+balanced)
+  next="power-saver"
+  ;;
+power-saver)
+  next="performance"
+  ;;
+*)
+  next="balanced"
+  ;;
 esac
 
 powerprofilesctl set "$next"
