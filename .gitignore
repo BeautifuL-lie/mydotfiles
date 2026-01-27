@@ -9,3 +9,4 @@ config/rofi/colors/matugen.rasi
 config/wlogout/blurred_wp.jpg
 config/niri/colors.kdl
 config/wlogout/colors
+config/wlogout/icons/*.png
