@@ -5,29 +5,31 @@ wallpaper="$HOME/.wallpaper"
 custom_color=$(cat "$HOME/.custom-color")
 
 if [ "$mode" = "dark" ]; then
-	if [ -f ~/.custom-color ]; then
-		if [ "$custom_color" != "monochrome" ]; then
-			matugen color hex "$custom_color" -m dark
-		else
-			matugen color hex "#000000" -m dark -t scheme-monochrome
-		fi
-	else
-		matugen image "$wallpaper" -m dark 
-	fi
-	echo "dark" > ~/.mode
-	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+  if [ -f ~/.custom-color ]; then
+    if [ "$custom_color" != "monochrome" ]; then
+      matugen color hex "$custom_color" -m dark
+    else
+      matugen color hex "#000000" -m dark -t scheme-monochrome
+    fi
+  else
+    matugen image "$wallpaper" -m dark
+    ~/.config/wlogout/change-mode.sh
+  fi
+  echo "dark" >~/.mode
+  gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 elif [ "$mode" = "light" ]; then
-	if [ -f ~/.custom-color ]; then
-		if [ "$custom_color" != "monochrome" ]; then
-			matugen color hex "$custom_color" -m light
-		else
-			matugen color hex "#000000" -m light -t scheme-monochrome
-		fi
-	else
-		matugen image "$wallpaper" -m light 
-	fi
-  	echo "light" > ~/.mode
-	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Light'
+  if [ -f ~/.custom-color ]; then
+    if [ "$custom_color" != "monochrome" ]; then
+      matugen color hex "$custom_color" -m light
+    else
+      matugen color hex "#000000" -m light -t scheme-monochrome
+    fi
+  else
+    matugen image "$wallpaper" -m light
+    ~/.config/wlogout/change-mode.sh
+  fi
+  echo "light" >~/.mode
+  gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Light'
 else
-  	echo "Invalid argument"
+  echo "Invalid argument"
 fi
