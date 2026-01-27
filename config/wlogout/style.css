@@ -35,7 +35,7 @@ button:focus {
 button:hover {
   background-size: 50%;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
-  background-color: @primary_container;
+  background-color: @primary;
   color: @on_primary;
   transition: all 0.2s cubic-bezier(0.55, 0, 0.28, 1.682),
     box-shadow 0.5s ease-in;
