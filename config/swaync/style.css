@@ -9,7 +9,7 @@
 :root {
   --cc-bg: @background;
   --cc-bg-alpha: 1;
-  --noti-border-color: @primary;
+  --noti-border-color: @outline;
   --noti-bg: @background;
   --noti-bg-alpha: 1;
   --noti-bg-darker: @surface_dim;
