@@ -10,7 +10,7 @@
   --cc-bg: @background;
   --cc-bg-alpha: 1;
   --noti-border-color: @outline;
-  --noti-bg: @background;
+  --noti-bg: @surface_container_high;
   --noti-bg-alpha: 1;
   --noti-bg-darker: @surface_dim;
   --noti-bg-hover: @surface_bright;
