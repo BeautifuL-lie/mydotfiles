@@ -10,6 +10,7 @@ binds {
     Mod+Space hotkey-overlay-title="Open Application Launcher" { spawn-sh "~/.config/rofi/scripts/rofi.sh app"; }
     Mod+Alt+R hotkey-overlay-title="Reload Waybar" { spawn-sh "~/.config/waybar/scripts/waybar-reload.sh"; }
     Mod+M hotkey-overlay-title="Switch Power Profile" { spawn-sh "change-power-profile"; }
+    Mod+Shift+C hotkey-overlay-title="Open Clipboard" { spawn-sh "~/.config/rofi/scripts/rofi.sh clipboard"; }
     Alt+F4 hotkey-overlay-title="Open Wlogout" { spawn-sh "pkill rofi || true; swaync-client -cp; pkill wlogout || wlogout -b 5"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
