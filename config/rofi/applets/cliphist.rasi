@@ -57,7 +57,7 @@ dummy {
 
 textbox-help {
     expand: 			 false;
-    content: 			 " [CTRL DEL] Delete 󰆴 \n [ALT DEL] Wipe 󱕖 ";
+    content: 			 " [CTRL DEL] - Delete 󰆴 \n [ALT DEL]  - Wipe 󱕖 ";
     border-radius:               12px;
     background-color:            white/12%;
     text-color:                  white;
