@@ -13,8 +13,8 @@
 /*--------Color definitions------------*/
 
 * {
-       background:       @surface;
-       background-alt:   @surface-container-low;
+       background:       @surface-container-high;
+       background-alt:   @surface-container-highest;
        background-alpha: @surface-alpha;
        foreground:       @on-surface;
        border-color:     @outline;
