@@ -27,7 +27,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      2px;
-    border-radius:               12px;
+    border-radius:               0px;
     border-color:                @border-color;
     background-color:            @background;
     cursor:                      "default";
@@ -53,7 +53,7 @@ inputbar {
     margin:                      0px;
     padding:                     15px;
     border:                      1px;
-    border-radius:               12px;
+    border-radius:               0px;
     border-color:                @border-color;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -118,7 +118,7 @@ element {
     margin:                      0px;
     padding:                     10px;
     border:                      0px solid;
-    border-radius:               12px;
+    border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
