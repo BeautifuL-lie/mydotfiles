@@ -2,8 +2,8 @@
 
 window#osd {
   border-radius: 10px;
-  border: 2px solid @primary;
-  background: alpha(@surface_container_low, 0.8);
+  border: 2px solid @outline;
+  background: alpha(@surface_container_high, 0.95);
 }
 
 window#osd #container {
@@ -18,7 +18,7 @@ window#osd image {
 
 window#osd image,
 window#osd label {
-  color: @primary;
+  color: @on_background;
 }
 
 window#osd progressbar:disabled,
@@ -37,12 +37,12 @@ window#osd trough {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: alpha(@primary_container, 0.5);
+  background: alpha(@surface_container_low, 0.7);
 }
 
 window#osd progress {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: @primary;
+  background: @on_surface;
 }
