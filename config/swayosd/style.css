@@ -2,7 +2,7 @@
 
 window#osd {
   border-radius: 10px;
-  border: 2px solid @outline;
+  border: 2px solid @outline_variant;
   background: alpha(@surface_container_high, 0.95);
 }
 
@@ -18,7 +18,7 @@ window#osd image {
 
 window#osd image,
 window#osd label {
-  color: @on_background;
+  color: @primary;
 }
 
 window#osd progressbar:disabled,
@@ -44,5 +44,5 @@ window#osd progress {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: @on_surface;
+  background: @primary;
 }
