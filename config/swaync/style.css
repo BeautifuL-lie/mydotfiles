@@ -7,9 +7,9 @@
   font-weight: bold;
 }
 :root {
-  --cc-bg: @background;
+  --cc-bg: @surface_container;
   --cc-bg-alpha: 1;
-  --noti-border-color: @outline;
+  --noti-border-color: @outline_variant;
   --noti-bg: @surface_container_high;
   --noti-bg-alpha: 1;
   --noti-bg-darker: @surface_dim;
@@ -27,7 +27,7 @@
   --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
   --notification-group-icon-size: 32px;
   --border: 2px solid var(--noti-border-color);
-  --border-radius: 12px;
+  --border-radius: 10px;
   --notification-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3),
     0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
   --font-size-body: 15px;
@@ -509,7 +509,7 @@
 .widget-dnd switch:checked {
   border-radius: var(--border-radius);
   margin-left: 8px;
-  background: @primary;
+  background: @inverse_primary;
 }
 
 .widget-dnd switch slider {
@@ -598,7 +598,7 @@
 /************** Buttons Grid Widget **************/
 .widget-buttons-grid flowboxchild > button {
   border-radius: var(--border-radius);
-  background: @surface_container_high;
+  background: @surface_container_highest;
   color: @on_background;
 }
 
