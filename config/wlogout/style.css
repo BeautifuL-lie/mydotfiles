@@ -24,6 +24,7 @@ button {
   border-radius: 0px;
   border: 2px solid @outline_variant;
   min-width: 100px;
+  margin: 2px;
   color: @on_background;
 }
 
