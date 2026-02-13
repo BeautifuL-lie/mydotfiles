@@ -1,6 +1,6 @@
 layout {
     border {
-        active-color "{{colors.primary_container.default.hex}}"
+        active-color "{{colors.outline_variant.default.hex}}"
         inactive-color "{{colors.surface_container.default.hex}}"
     }
 }
