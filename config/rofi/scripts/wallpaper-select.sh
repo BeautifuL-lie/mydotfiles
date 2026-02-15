@@ -101,6 +101,5 @@ MODE_FILE="$HOME/.mode"
 read -r mode <"$MODE_FILE"
 
 rm -f ~/.custom-color 2>/dev/null
-matugen image "${wall_dir}/${wall_selection}" -m "$mode"
+(cd "${wall_dir}/" && matugen image "${wall_selection}" -m "$mode" --source-color-index 0)
 ln -sf "${wall_dir}/${wall_selection}" ~/.wallpaper
-
