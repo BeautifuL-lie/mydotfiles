@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 mode=$1
-wallpaper="$HOME/.wallpaper"
-custom_color=$(cat "$HOME/.custom-color")
+wallpaper=$(swww query | sed -n 's/.*image: //p')
+custom_color=$(cat "$HOME/.custom-color" 2>/dev/null)
 
 if [ "$mode" = "dark" ]; then
   if [ -f ~/.custom-color ]; then
@@ -12,7 +12,7 @@ if [ "$mode" = "dark" ]; then
       matugen color hex "#000000" -m dark -t scheme-monochrome
     fi
   else
-    matugen image "$wallpaper" -m dark
+    matugen image "$wallpaper" -m dark --source-color-index 0
   fi
   ~/.config/wlogout/change-mode.sh
   echo "dark" >~/.mode
@@ -25,7 +25,7 @@ elif [ "$mode" = "light" ]; then
       matugen color hex "#000000" -m light -t scheme-monochrome
     fi
   else
-    matugen image "$wallpaper" -m light
+    matugen image "$wallpaper" -m light --source-color-index 0
   fi
   ~/.config/wlogout/change-mode.sh
   echo "light" >~/.mode
