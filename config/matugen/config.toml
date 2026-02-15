@@ -3,7 +3,7 @@ version_check = false
 
 [config.wallpaper]
 set = true
-command = "swww img ~/Pictures/Wallpapers/{{ image }} --transition-type any --transition-step 255 --transition-fps 60 --transition-duration 1.8"
+command = "swww img '{{ image }}' --transition-type any --transition-step 255 --transition-fps 60 --transition-duration 1.8"
 
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
