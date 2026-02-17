@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 trap "exit" SIGTERM SIGINT
 
-while true; do
+clipfile=/tmp/clipboard
+
+while [[ -f "$clipfile" ]]; do
   result=$(
     rofi -i -dmenu \
       -kb-custom-1 "Control-Delete" \
