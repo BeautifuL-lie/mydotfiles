@@ -131,6 +131,8 @@ element normal.normal {
 element selected.normal {
     background-color:            @selected;
     text-color:                  @selected-text;
+    border:                      2px solid;
+    border-color:                @border-color;                       
 }
 element-icon {
     background-color:            transparent;
