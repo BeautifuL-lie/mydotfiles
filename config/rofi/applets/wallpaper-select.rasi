@@ -154,7 +154,7 @@ textbox-prompt-colon {
 }
 
 entry {
-    placeholder: " Search Wallpaper...";
+    placeholder: "Search";
     placeholder-color: @foreground;
     text-color: @foreground;
     background-color: @background-alt;
