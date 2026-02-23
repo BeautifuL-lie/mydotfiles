@@ -126,6 +126,7 @@ element-text {
     cursor:                      inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
+    font: "FiraCode Nerd Font Bold 10";
 }
 element selected.normal {
     background-color:            var(selected);
