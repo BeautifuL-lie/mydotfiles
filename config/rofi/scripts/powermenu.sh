@@ -38,7 +38,7 @@ confirm_cmd() {
     -dmenu \
     -p 'Confirmation' \
     -mesg 'Are you Sure?' \
-    -theme ../applets/powermenu.rasi
+    -theme ~/.config/rofi/applets/powermenu.rasi
 }
 
 # Ask for confirmation
