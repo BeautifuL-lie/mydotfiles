@@ -2,10 +2,6 @@
 
 STATE_FILE="/tmp/rofi_state"
 
-if pgrep -x "wlogout" >/dev/null; then
-	exit 0
-fi
-
 rm -rf /tmp/clipboard 2>/dev/null
 
 # Check if rofi running
@@ -19,28 +15,30 @@ if pgrep -x "rofi" >/dev/null; then
   else
     # if different → kill rofi then open it
     pkill -x rofi
-    sleep 0.1  
+    sleep 0.1
   fi
 fi
 
 case "$1" in
-app | wallpaper | clipboard) 
-	;;
+app | wallpaper | powermenu | clipboard) ;;
 *)
-  	exit 1
- 	;;
+  exit 1
+  ;;
 esac
 
 swaync-client -cp 2>/dev/null
 
 if [ "$1" == "app" ]; then
-	echo "app" >"$STATE_FILE"
-	rofi -show drun -theme ~/.config/rofi/applets/app.rasi &
+  echo "app" >"$STATE_FILE"
+  rofi -show drun -theme ~/.config/rofi/applets/app.rasi &
 elif [ "$1" == "wallpaper" ]; then
-	echo "wallpaper" >"$STATE_FILE"
-	~/.config/rofi/scripts/wallpaper-select.sh &
+  echo "wallpaper" >"$STATE_FILE"
+  ~/.config/rofi/scripts/wallpaper-select.sh &
+elif [ "$1" == "powermenu" ]; then
+  echo "powermenu" >"$STATE_FILE"
+  ~/.config/rofi/scripts/powermenu.sh &
 elif [ "$1" == "clipboard" ]; then
-	echo "clipboard" >"$STATE_FILE"
-	touch /tmp/clipboard
-	~/.config/rofi/scripts/clipboard.sh &
+  echo "clipboard" >"$STATE_FILE"
+  touch /tmp/clipboard
+  ~/.config/rofi/scripts/clipboard.sh &
 fi
