@@ -15,7 +15,7 @@ window {
     border-radius: 16px;
     background-color: @background;
     border: 2px solid;
-    border-color: @selected;
+    border-color: @border-color; 
 }
 
 mainbox {
