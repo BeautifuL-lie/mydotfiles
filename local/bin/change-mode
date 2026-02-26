@@ -14,7 +14,6 @@ if [ "$mode" = "dark" ]; then
   else
     matugen image "$wallpaper" -m dark --source-color-index 0
   fi
-  ~/.config/wlogout/change-mode.sh
   echo "dark" >~/.mode
   gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 elif [ "$mode" = "light" ]; then
@@ -27,7 +26,6 @@ elif [ "$mode" = "light" ]; then
   else
     matugen image "$wallpaper" -m light --source-color-index 0
   fi
-  ~/.config/wlogout/change-mode.sh
   echo "light" >~/.mode
   gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Light'
 else
