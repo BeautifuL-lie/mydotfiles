@@ -59,6 +59,8 @@ run_cmd() {
       systemctl poweroff
     elif [[ $1 == '--reboot' ]]; then
       systemctl reboot
+    elif [[ $1 == "--lock" ]]; then
+      swaylock -f
     elif [[ $1 == '--suspend' ]]; then
       mpc -q pause
       amixer set Master mute
@@ -81,7 +83,7 @@ $reboot)
   run_cmd --reboot
   ;;
 $lock)
-  swaylock -f
+  run_cmd --lock
   ;;
 $suspend)
   run_cmd --suspend
