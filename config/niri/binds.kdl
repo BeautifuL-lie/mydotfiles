@@ -8,7 +8,6 @@ binds {
     Mod+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
     Mod+Shift+W hotkey-overlay-title="Change Wallpaper" { spawn-sh "~/.config/rofi/scripts/rofi.sh wallpaper"; }
     Mod+Space hotkey-overlay-title="Open Application Launcher" { spawn-sh "~/.config/rofi/scripts/rofi.sh app"; }
-    Mod+Alt+R hotkey-overlay-title="Reload Waybar" { spawn-sh "~/.config/waybar/scripts/waybar-reload.sh"; }
     Mod+M hotkey-overlay-title="Switch Power Profile" { spawn-sh "change-power-profile"; }
     Mod+Shift+C hotkey-overlay-title="Open Clipboard" { spawn-sh "~/.config/rofi/scripts/rofi.sh clipboard"; }
     Alt+F4 hotkey-overlay-title="Open Powermenu" { spawn-sh "~/.config/rofi/scripts/rofi.sh powermenu"; }
