@@ -39,9 +39,9 @@
       "keyColor": "33"
     },
     {
-      "type": "packages",
-      "format": "{} (pacman)",
-      "key": "pkgs  ",
+      "type": "shell",
+      "format": "{1}",
+      "key": "shell ",
       "keyColor": "33"
     },
     {
