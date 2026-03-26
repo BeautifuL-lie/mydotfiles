@@ -1,4 +1,4 @@
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 spawn-at-startup "nm-applet --indicator"
 spawn-at-startup "qs"
 spawn-at-startup "swaync"
