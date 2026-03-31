@@ -11,8 +11,8 @@ binds {
     Mod+M hotkey-overlay-title="Switch Power Profile" { spawn-sh "change-power-profile"; }
     Mod+Shift+C hotkey-overlay-title="Open Clipboard" { spawn-sh "~/.config/rofi/scripts/rofi.sh clipboard"; }
     Alt+F4 hotkey-overlay-title="Open Powermenu" { spawn-sh "~/.config/rofi/scripts/rofi.sh powermenu"; }
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+2"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-2"; }
     XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
