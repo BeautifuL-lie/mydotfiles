@@ -3,4 +3,9 @@ layout {
         active-color "{{colors.outline_variant.default.hex}}"
         inactive-color "{{colors.surface_container.default.hex}}"
     }
+
+    tab-indicator {
+        active-color "{{colors.primary.default.hex}}"
+        inactive-color "{{colors.outline.default.hex}}"
+    }
 }

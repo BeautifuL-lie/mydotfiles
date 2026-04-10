@@ -37,6 +37,13 @@ layout {
         top 0
         bottom 0
     }
+
+    tab-indicator {
+        place-within-column
+        gap -4
+        gaps-between-tabs 10
+        length total-proportion=0.45
+    }
 }
 
 hotkey-overlay {
