@@ -9,3 +9,9 @@ layout {
         inactive-color "{{colors.outline.default.hex}}"
     }
 }
+
+recent-windows {
+    highlight {
+        active-color "{{colors.secondary.default.hex}}"
+    }
+}
