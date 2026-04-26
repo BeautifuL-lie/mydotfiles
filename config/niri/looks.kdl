@@ -73,3 +73,10 @@ overview {
 		off
 	}
 }
+
+blur {
+    passes 3
+    offset 3
+    noise 0.02
+    saturation 1.5
+}
