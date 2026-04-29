@@ -5,3 +5,4 @@ config/swayosd/colors/matugen.css
 config/kitty/current-theme.conf
 config/rofi/colors/matugen.rasi
 config/niri/colors.kdl
+config/foot/foot_colors.ini
