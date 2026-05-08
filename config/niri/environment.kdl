@@ -11,4 +11,5 @@ environment {
     SDL_VIDEODRIVER "wayland"
 
     EDITOR "nvim"
+    TERMINAL "kitty"
 }
