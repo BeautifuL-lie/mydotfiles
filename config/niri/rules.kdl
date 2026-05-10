@@ -48,3 +48,11 @@ layer-rule {
 
     geometry-corner-radius 10
 }
+
+layer-rule {
+    match namespace="^bar$"
+
+    background-effect {
+        blur true
+    }
+}
